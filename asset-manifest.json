@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Groww-Training-TypeScript-Project3/static/css/main.786dd964.css",
-    "main.js": "/Groww-Training-TypeScript-Project3/static/js/main.a215dd2c.js",
-    "index.html": "/Groww-Training-TypeScript-Project3/index.html",
-    "main.786dd964.css.map": "/Groww-Training-TypeScript-Project3/static/css/main.786dd964.css.map",
-    "main.a215dd2c.js.map": "/Groww-Training-TypeScript-Project3/static/js/main.a215dd2c.js.map"
+    "main.css": "/Groww-Training-TypeScript-Tic-Tac-Toe/static/css/main.786dd964.css",
+    "main.js": "/Groww-Training-TypeScript-Tic-Tac-Toe/static/js/main.a215dd2c.js",
+    "index.html": "/Groww-Training-TypeScript-Tic-Tac-Toe/index.html",
+    "main.786dd964.css.map": "/Groww-Training-TypeScript-Tic-Tac-Toe/static/css/main.786dd964.css.map",
+    "main.a215dd2c.js.map": "/Groww-Training-TypeScript-Tic-Tac-Toe/static/js/main.a215dd2c.js.map"
   },
   "entrypoints": [
     "static/css/main.786dd964.css",
