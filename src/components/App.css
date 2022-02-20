@@ -1,5 +1,16 @@
 .App {
   text-align: center;
-  min-height: 100vh;
+  min-height: 80vh;
   height: inherit;
+  padding-top: 15vh;
+}
+
+.gameContainers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultContainer {
+  margin-top: 10vh;
 }
