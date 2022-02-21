@@ -3,8 +3,17 @@ export default function checkResult(
   col: number,
   game: string[][]
 ) {
-  let flag = true;
+  if (row >= 1 && row <= 3 && col >= 1 && col <= 3) {
+    if (
+      rowCheck(row, col, game) ||
+      colCheck(row, col, game) ||
+      diagonalCheck(row, col, game)
+    ) {
+      return { matchOver: true, winner: game[row - 1][col - 1] };
+    }
+  }
 
+  let flag = true;
   for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       if (game[i][j] === "-") {
@@ -15,16 +24,9 @@ export default function checkResult(
     if (!flag) break;
   }
 
-  if (flag) return { matchOver: true, winner: "Draw" };
-
-  if (row >= 1 && row <= 3 && col >= 1 && col <= 3) {
-    return rowCheck(row, col, game) ||
-      colCheck(row, col, game) ||
-      diagonalCheck(row, col, game)
-      ? { matchOver: true, winner: game[row - 1][col - 1] }
-      : { matchOver: false, winner: "-" };
-  }
-  return { matchOver: false, winner: "-" };
+  return flag
+    ? { matchOver: true, winner: "Draw" }
+    : { matchOver: false, winner: "-" };
 }
 
 // check 1 - row
@@ -44,9 +46,8 @@ function colCheck(row: number, col: number, game: string[][]) {
 // check 3 - diagonal
 function diagonalCheck(row: number, col: number, game: string[][]) {
   if (row === 2 && col === 2) {
-    return (game[row - 1][col - 1] === game[0][0] &&
-      game[0][0] === game[2][2]) ||
-      (game[row - 1][col - 1] === game[0][2] && game[0][2] === game[2][0])
+    return (game[1][1] === game[0][0] && game[0][0] === game[2][2]) ||
+      (game[1][1] === game[0][2] && game[1][1] === game[2][0])
       ? true
       : false;
   } else if (row !== 2 && col !== 2) {
@@ -54,8 +55,8 @@ function diagonalCheck(row: number, col: number, game: string[][]) {
       return game[2][2] === game[1][1] && game[1][1] === game[0][0]
         ? true
         : false;
-    }
-    if (game[0][2] === game[1][1] && game[1][1] === game[0][2]) return true;
+    } else if (game[0][2] === game[1][1] && game[1][1] === game[2][0])
+      return true;
   }
   return false;
 }

@@ -1,5 +1,7 @@
 .gameBlock {
-  /* height: 33.33%;
-    width: calc(100% / 3); */
-  background-color: aqua;
+  transition: transform 0.25s;
+}
+
+.gameBlock i {
+  animation: expand 0.5s ease-in-out;
 }

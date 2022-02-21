@@ -6,6 +6,7 @@ import checkResult from "../../../utils/helpers/checkResult";
 import GameBlock from "./GameBlock/GameBlock";
 
 import "./GameComponent.css";
+import Alert from "../alert";
 
 type Props = {
   parentRef: any;
@@ -38,7 +39,8 @@ const GameComponent = (props: Props) => {
     alterPlayer();
   };
 
-  const resetGame = () => {
+  const resetGame = (e: any) => {
+    e.stopPropagation();
     setGameOver(false);
     setGame([
       ["-", "-", "-"],
@@ -54,6 +56,7 @@ const GameComponent = (props: Props) => {
   useEffect(() => {
     const res = checkResult(row, col, game);
     setGameOver(res.matchOver);
+
     if (res.matchOver) {
       setWinner(res.winner);
       props.parentRef.current.addEventListener("click", resetGame);
@@ -81,9 +84,12 @@ const GameComponent = (props: Props) => {
 
   return (
     <>
+      {winner !== "-" && <Alert winner={winner} />}
+
       {winner !== "-" && winner !== "Draw" && (
         <Confetti opacity={1} className="confetti" />
       )}
+
       <div className="gameMainContainer">{renderBlocks()}</div>
     </>
   );

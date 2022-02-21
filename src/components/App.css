@@ -3,6 +3,7 @@
   min-height: 80vh;
   height: inherit;
   padding-top: 15vh;
+  overflow-x: hidden;
 }
 
 .gameContainers {
@@ -13,4 +14,10 @@
 
 .resultContainer {
   margin-top: 10vh;
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    padding-top: 200px;
+  }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import "./GameBlock.css";
 
 type Props = {
   row: number;

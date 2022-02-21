@@ -7,3 +7,7 @@
   align-items: center;
   padding: 10px;
 }
+
+.resultItems h4 {
+  animation: expand 0.5s ease-in-out;
+}

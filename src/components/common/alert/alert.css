@@ -1,0 +1,14 @@
+.alertContainer {
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translate(-50%);
+  width: max-content;
+  background: transparent;
+  animation: expand 0.5s ease-in-out;
+}
+
+.alertBox h1 {
+  color: var(--main-color);
+  opacity: 1;
+}
