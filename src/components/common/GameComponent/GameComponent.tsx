@@ -84,7 +84,7 @@ const GameComponent = (props: Props) => {
 
   return (
     <>
-      {winner !== "-" && <Alert winner={winner} />}
+      <Alert winner={winner} />
 
       {winner !== "-" && winner !== "Draw" && (
         <Confetti opacity={1} className="confetti" />

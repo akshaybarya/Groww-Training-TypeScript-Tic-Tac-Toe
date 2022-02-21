@@ -5,3 +5,7 @@
 .gameBlock i {
   animation: expand 0.5s ease-in-out;
 }
+
+.blockActive {
+  cursor: pointer;
+}

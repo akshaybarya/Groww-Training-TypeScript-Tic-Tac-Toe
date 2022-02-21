@@ -9,23 +9,19 @@ type Props = {
 const Alert = (props: Props) => {
   const getWinner = () => {
     switch (props.winner) {
-      case "X": {
+      case "X":
         return "Player1 Wins!";
-      }
-      case "O": {
+
+      case "O":
         return "Player2 Wins!";
-      }
-      case "Draw": {
+
+      case "Draw":
         return "Match Draw !!";
-      }
+
       default:
-        return null;
+        return "Tic Tac Toe";
     }
   };
-
-  if (props.winner === "-") {
-    return null;
-  }
 
   return (
     <div className="alertContainer">

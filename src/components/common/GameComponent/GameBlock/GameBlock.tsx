@@ -16,8 +16,13 @@ const GameBlock = (props: Props) => {
     if (game[row - 1][col - 1] === "-" && !gameOver) alterGame(row, col);
   };
 
+  const c = game[row - 1][col - 1] === "-" && !gameOver ? "blockActive" : "";
+
   return (
-    <div className={`gameBlock gameRow${row} gameCol${col}`} onClick={alter}>
+    <div
+      className={`gameBlock gameRow${row} gameCol${col} ${c}`}
+      onClick={alter}
+    >
       {game[row - 1][col - 1] !== "-" &&
         (game[row - 1][col - 1] === "X" ? (
           <i className="fa-solid fa-xmark gameBlockX"></i>

@@ -12,3 +12,7 @@
   color: var(--main-color);
   opacity: 1;
 }
+
+.alertBox h1 {
+  animation: expand 0.5s ease-in-out;
+}
